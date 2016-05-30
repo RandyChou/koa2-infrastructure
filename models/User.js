@@ -19,7 +19,13 @@ var User = sequelize.define('user', {
     sex: {
         type: Sequelize.ENUM,
         values: ['0', '1', '2'],
-        defaultValue: '0'
+        defaultValue: '0',
+        validate: {
+            isIn: {
+                args: [['0', '1', '2']],
+                msg: '参数不正确'
+            }
+        }
     }
 }, {
     paranoid: true,

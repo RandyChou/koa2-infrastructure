@@ -33,7 +33,7 @@ export default class User {
 
 			return returnNext(null, 200, results);
 		} catch(err) {
-			return returnNext(null, 500, {});
+			return returnNext(err, 500, {});
 		}
 
 		// Unmanaged transactions force you to manually rollback or commit the transaction
