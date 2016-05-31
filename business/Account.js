@@ -1,6 +1,5 @@
 import model from '../models';
 import returnNext from '../lib/common/returnNext';
-import {formatCreateData} from '../lib/common/sequelizeUtil';
 
 export default class User {
 	async getAccount() {

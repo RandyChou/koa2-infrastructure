@@ -12,8 +12,6 @@ var Role = sequelize.define('role', {
         type: Sequelize.STRING
     }
 }, {
-    paranoid: true,
-    freezeTableName: true,
     hooks: {
 		beforeCreate: function(role, options) {
 			role.id = uuid.v1();

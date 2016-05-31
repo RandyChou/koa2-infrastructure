@@ -44,5 +44,4 @@ app.on('error', function(err, ctx){
   logger.error('server error', err, ctx);
 });
 
-
 module.exports = app;

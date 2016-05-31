@@ -12,8 +12,6 @@ var Account = sequelize.define('account', {
         type: Sequelize.DECIMAL(10, 2)
     }
 }, {
-    paranoid: true,
-    freezeTableName: true,
     hooks: {
 		beforeCreate: function(account) {
 			account.id = uuid.v1();

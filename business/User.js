@@ -1,7 +1,6 @@
 import sequelize from '../lib/common/sequelize';
 import model from '../models';
 import returnNext from '../lib/common/returnNext';
-import {formatCreateData} from '../lib/common/sequelizeUtil';
 
 export default class User {
 	async getUsers() {
@@ -23,11 +22,12 @@ export default class User {
 		try {
 			let results = await sequelize.transaction(async function(t) {
 				let user = await model.user.create(data);
-				let account = await model.account.create({amount: 0});
-				// throw new Error();
-				await user.setAccount(account);
+				let results = await user.createAccount({amount: 0});
+				// let account = await model.account.create({amount: 0});
+				// // throw new Error();
+				// await user.setAccount(account);
 				return new Promise(function(resolve, reject) {
-					resolve({test: 'test'});
+					resolve(results);
 				});
 			});
 

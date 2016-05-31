@@ -12,8 +12,6 @@ var Info = sequelize.define('info', {
         type: Sequelize.STRING
     }
 }, {
-    paranoid: true,
-    freezeTableName: true,
     hooks: {
 		beforeCreate: function(info, options) {
 			info.id = uuid.v1();

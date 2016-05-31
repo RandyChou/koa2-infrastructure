@@ -28,8 +28,6 @@ var User = sequelize.define('user', {
         }
     }
 }, {
-    paranoid: true,
-    freezeTableName: true,
     hooks: {
         beforeCreate: function(user, options) {
             user.id = uuid.v1();
